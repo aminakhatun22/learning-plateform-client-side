@@ -9,6 +9,7 @@ import MyCourses from "../Pages/Courses/RightSide/MyCourses";
 import Payment from "../Pages/Courses/RightSide/Payment";
 import Profile from "../Pages/Courses/RightSide/Profile";
 import SingleCourse from "../Pages/Courses/RightSide/SingleCourse";
+import FAQ from "../Pages/FAQ/FAQ";
 import Home from "../Pages/Home/Home";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 
@@ -31,6 +32,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog />,
+            },
+            {
+                path: '/faq',
+                element: <FAQ />,
             },
             {
                 path: '/checkout/:id',
