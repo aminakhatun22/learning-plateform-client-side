@@ -5,15 +5,21 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAbhvmmyybcv_vVBghn3d10gQDqcPHA_YQ",
-    authDomain: "teaching-with-love-client.firebaseapp.com",
-    projectId: "teaching-with-love-client",
-    storageBucket: "teaching-with-love-client.appspot.com",
-    messagingSenderId: "766203922357",
-    appId: "1:766203922357:web:55838d42cbd3ec5b273bfc"
+    // apiKey: "AIzaSyAbhvmmyybcv_vVBghn3d10gQDqcPHA_YQ",
+    // authDomain: "teaching-with-love-client.firebaseapp.com",
+    // projectId: "teaching-with-love-client",
+    // storageBucket: "teaching-with-love-client.appspot.com",
+    // messagingSenderId: "766203922357",
+    // appId: "1:766203922357:web:55838d42cbd3ec5b273bfc"
+
+    apikey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBuket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 export default app;

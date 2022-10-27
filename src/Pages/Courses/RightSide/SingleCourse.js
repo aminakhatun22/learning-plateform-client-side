@@ -1,6 +1,11 @@
 import React from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
+// import Pdf from "react-to-pdf";
+
+// import ReactDOM from "react-dom";
+
+const ref = React.createRef();
 
 const SingleCourse = () => {
     const course = useLoaderData();
@@ -20,6 +25,10 @@ const SingleCourse = () => {
                             </Card.Text>
                             <Link to={`/checkout/${course.id}`}>
                                 <Button variant="primary">Get Premium Access</Button>
+                                {/* <Pdf targetRef={ref} filename="course-detail">
+                                    {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+                                </Pdf> */}
+
                             </Link>
                         </Card.Body>
                     </Col>

@@ -12,6 +12,7 @@ const Navigation = () => {
     const handleToggle = (e) => {
         setDark(e.target.checked);
     }
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='p-0'>
             <Container>
@@ -24,7 +25,7 @@ const Navigation = () => {
 
                     {/* navigation menus */}
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/home">Home</Nav.Link>
+
                         <Nav.Link as={Link} to="/courses">Courses</Nav.Link>
                         <Nav.Link as={Link} to="/faq">FAQ</Nav.Link>
                         <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
@@ -33,7 +34,8 @@ const Navigation = () => {
 
                     {/* user and authencation part */}
                     <Nav>
-                        {user?.displayName && <Nav.Link >{user?.displayName}</Nav.Link>}
+                        {user?.photoURL && <img src={user.photoURL}
+                            title={user.displayName} />}
                         {
                             user?.email ?
                                 <Button variant="dark" onClick={logOut}>Logout</Button>

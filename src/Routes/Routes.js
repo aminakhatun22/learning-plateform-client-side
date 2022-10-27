@@ -9,22 +9,21 @@ import MyCourses from "../Pages/Courses/RightSide/MyCourses";
 import Payment from "../Pages/Courses/RightSide/Payment";
 import Profile from "../Pages/Courses/RightSide/Profile";
 import SingleCourse from "../Pages/Courses/RightSide/SingleCourse";
+import ErrorPage from "../Pages/ErrorPage";
 import FAQ from "../Pages/FAQ/FAQ";
-import Home from "../Pages/Home/Home";
+
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 
 //server url
-const url = 'http://localhost:4000';
+// const url = 'https://teaching-with-love-server.vercel.app/';
 
 export const routes = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
-            {
-                path: '/home',
-                element: <Home />,
-            },
+
             {
                 path: '/login',
                 element: <Authentication />,
@@ -40,14 +39,14 @@ export const routes = createBrowserRouter([
             {
                 path: '/checkout/:id',
                 loader: async ({ params }) => {
-                    return fetch(`${url}/courses/${params.id}`)
+                    return fetch(`https://teaching-with-love-server.vercel.app/courses/${params.id}`)
                 },
                 element: <PrivateRoute><Checkout /></PrivateRoute>,
             },
             {
                 path: '/course/:id',
                 loader: async ({ params }) => {
-                    return fetch(`${url}/courses/${params.id}`)
+                    return fetch(`https://teaching-with-love-server.vercel.app/courses/${params.id}`)
                 },
                 element: <SingleCourse />,
             },
@@ -59,7 +58,7 @@ export const routes = createBrowserRouter([
                         index: true,
                         element: <MyCourses />,
                         loader: async () => {
-                            return fetch(`${url}/courses`)
+                            return fetch('https://teaching-with-love-server.vercel.app/courses')
                         }
                     },
                     {
