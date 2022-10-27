@@ -8,6 +8,7 @@ import MyCourses from "../Pages/Courses/RightSide/MyCourses";
 import Payment from "../Pages/Courses/RightSide/Payment";
 import Profile from "../Pages/Courses/RightSide/Profile";
 import ErrorPage from "../Pages/ErrorPage";
+import FAQ from "../Pages/FAQ/FAQ";
 import Home from "../Pages/Home/Home";
 
 export const routes = createBrowserRouter([
@@ -27,6 +28,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog />,
+            },
+            {
+                path: '/faq',
+                element: <FAQ />,
             },
             {
                 path: '/courses',
